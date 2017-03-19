@@ -1,10 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>Thymeleaf Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all" href="css/main.css"
+	th:href="@{css/main.css}" />
 </head>
+
 <body>
-	demo page!!!
+
+	<p>
+		Welcome to <span th:text="${home}"> our grocery store!</span>
+	</p>
+	<h3>
+		Hello:<span th:text="#{home.welcome}">peng sir</span>
+	</h3>
+	<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
+	<a th:href="@{http://www.youdao.com}">百度</a>
+	<a th:href="@{http://www.youdao.com/name(v=3,t=4)}">百度</a>
+	<a th:href="@{http://www.youdao.com/{t}/name(v=3,t=4)}">百度</a>
+	<p th:text="'dongneng'+${home}+'love'">内容</p>
+	<p th:text="'dongneng'+${'ggg'}+'love' ">内容</p>
+
+	<p th:text="|dongneng ${home} love |">内容</p>
+	<hr />
+	<p th:text="hello">!!!</p>
+	<p th:text="|yes big!|" th:if="1 >  0">big</p>
+	<p th:text="'yes big!'" th:if="${home}==null">nnn</p>
+	<p th:text="('yes big!')" th:if="${home}==null">nnn</p>
+	<p
+		th:text="'Execution mode is ' + ( (${execMode} == 'dev')? 'Development' : 'Production')">ttt</p>
+	<p
+		th:text="|Execution mode is  ( (${execMode} == 'dev')? 'Development' : 'Production')|">ttt</p>
+	<p th:text="('yes big!')" th:unless="${home}!=null">nnn</p>
+
+	<hr />
+
+	<div th:switch="'name'">
+		<p th:case="'age'">1</p>
+		<p th:case="'gg'">2</p>
+		<p th:case="*">3</p>
+	</div>
+	<hr/>
+	<div th:remove="all">
+		<p th:text="${#dates.createNow()}">content</p>
+		<p th:text="#{dates}">content</p>
+	</div>
+	<p th:text="('yes big!')" th:if="${home==null}">nnn</p>
+	<p th:text="${name}">myName</p>${name}
 </body>
+
 </html>
