@@ -69,6 +69,18 @@
 			<optional>true</optional>
 		</dependency>
 
+
+		<!-- thymeleaf模板 springboot优先使用thymeleaf-->
+<!-- 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.sourceforge.nekohtml</groupId>
+			<artifactId>nekohtml</artifactId>
+		</dependency> -->
+		
+		
 		<!-- 以下三依赖，代表使用jsp做模板 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -84,16 +96,6 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<scope>provided</scope>
-		</dependency>
-
-		<!-- thymeleaf模板 -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-thymeleaf</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>net.sourceforge.nekohtml</groupId>
-			<artifactId>nekohtml</artifactId>
 		</dependency>
 		
 		<!-- for war creating ... -->

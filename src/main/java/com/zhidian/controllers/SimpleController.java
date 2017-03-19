@@ -46,6 +46,15 @@ public class SimpleController {
 		return "demo";
 	}
 	
+	@RequestMapping("/demo2")
+	public String demo2(){
+		return "demo2";
+	}
+	
+	@RequestMapping("/demo3")
+	public String demo3(){
+		return "jDemo";
+	}
 	
 	@ResponseBody
 	@RequestMapping("/user")
@@ -60,11 +69,11 @@ public class SimpleController {
 	@RequestMapping("/error2")
 	@ResponseStatus(code=HttpStatus.CONFLICT,reason="not not not")
 	@ExceptionHandler(Exception.class)
-	public String error(){
+	public void error(){
 		System.out.println("in error2...");
 		int i = 1/0;
 		System.out.println(i);
-		return "error";
+//		return "error";
 	}
 	
 	@RequestMapping("/t")
