@@ -218,7 +218,7 @@ public class SimpleController {
 		return "forward:/demo";
 	}
 
-	public static final String ROOT = "data/avatar/";
+	public static final String ROOT = "/data/avatar/";
 
 	private final ResourceLoader resourceLoader;
 
@@ -232,14 +232,19 @@ public class SimpleController {
 	public ResponseEntity<?> getFile(@PathVariable String filename,
 			HttpServletRequest request) {
 		try {
-			String temp = request.getSession().getServletContext().getRealPath(Paths.get(ROOT, filename).toString());
-			System.out.println(temp);
-			return ResponseEntity.ok(resourceLoader.getResource(temp));
+//			String temp = request.getSession().getServletContext().getRealPath(Paths.get(ROOT, filename).toString());
+//			System.out.println(temp);
+//			return ResponseEntity.ok(resourceLoader.getResource(temp));
+			return ResponseEntity.ok(resourceLoader.getResource("file:" + Paths.get(ROOT, filename).toString()));
 		} catch (Exception e) {
 			return ResponseEntity.notFound().build();
 		}
 	}
 
+	
+	
+	
+	
 	@RequestMapping("/img")
 	public String img(@ModelAttribute("name") String name) {
 		return "img";
