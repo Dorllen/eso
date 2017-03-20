@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:th="http://www.thymeleaf.org">
   <head>
-    <title>r1.html</title>
+    <title>img.html</title>
 	
     <meta name="keywords" content="keyword1,keyword2,keyword3">
     <meta name="description" content="this is my page">
@@ -14,6 +14,11 @@
   </head>
   
   <body>
-    This is my r2 page. <br>
+    图片：<img th:src="@{'/avatar/'+${name}+'.jpg'}"/> <br>
+    
+    <form action="/img/set" th:action="@{/up}" method="post" enctype="multipart/form-data">
+    	<input type="file" value="file" name="file"/><br/>
+    	<input type="submit" value="提交" />
+    </form>
   </body>
 </html>

@@ -34,7 +34,7 @@ public class SimpleServletConfigs implements ServletContextInitializer {
 	public void onStartup(ServletContext servletContext)
 			throws ServletException {
 		servletContext.addServlet("SimpleServ", new SimpleServlet())
-				.addMapping("/simple");
+				.addMapping("/simple/*");
 		servletContext.addFilter("SimpleCrossFilter",
 				new SimpleCrossOriginFilter()).addMappingForUrlPatterns(
 				EnumSet.of(DispatcherType.INCLUDE, DispatcherType.REQUEST),
