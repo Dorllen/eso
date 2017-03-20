@@ -20,6 +20,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  */
 @Configuration
-public class MVCControllerConfig extends WebMvcConfigurerAdapter {
+public class MVCControllerConfigs extends WebMvcConfigurerAdapter {
 	
 }

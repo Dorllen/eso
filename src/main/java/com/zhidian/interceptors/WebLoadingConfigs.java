@@ -24,7 +24,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 public class WebLoadingConfigs extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-//		registry.addInterceptor(new SimpleInterceptor()).addPathPatterns("/**").addPathPatterns("/simple/**");
+		registry.addInterceptor(new SimpleInterceptor()).addPathPatterns("/**").addPathPatterns("/simple/**");
 		super.addInterceptors(registry);
 	}
 }

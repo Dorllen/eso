@@ -24,23 +24,29 @@ import org.springframework.web.servlet.ModelAndView;
  */
 public class SimpleInterceptor implements HandlerInterceptor {
 
-	public void afterCompletion(HttpServletRequest arg0,
-			HttpServletResponse arg1, Object arg2, Exception arg3)
+	@Override
+	public boolean preHandle(HttpServletRequest request,
+			HttpServletResponse response, Object handler) throws Exception {
+		System.out.println("simpleIterceptor prehandler");
+		System.out.println(System.nanoTime());
+		return true;
+	}
+
+	@Override
+	public void postHandle(HttpServletRequest request,
+			HttpServletResponse response, Object handler,
+			ModelAndView modelAndView) throws Exception {
+		System.out.println("simpleIterceptor postHandle");
+		System.out.println(System.nanoTime());
+	}
+
+	@Override
+	public void afterCompletion(HttpServletRequest request,
+			HttpServletResponse response, Object handler, Exception ex)
 			throws Exception {
-		// TODO Auto-generated method stub
-		
+		System.out.println("simpleIterceptor afterCompletion");
+		System.out.println(System.nanoTime());
 	}
 
-	public void postHandle(HttpServletRequest arg0, HttpServletResponse arg1,
-			Object arg2, ModelAndView arg3) throws Exception {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public boolean preHandle(HttpServletRequest arg0, HttpServletResponse arg1,
-			Object arg2) throws Exception {
-		// TODO Auto-generated method stub
-		return false;
-	}
 
 }

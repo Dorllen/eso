@@ -1,0 +1,26 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>r1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+   
+   表单回显数据出错！！！！！！
+   
+  <body>
+    <form method="post" action="form/set" th:action="@{/form/set}" th:object="${user}">
+    	<input type="text" name="name"/><br/>
+    	<input type="text" name="age" /><p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age max is 10</p><br/>
+    	<input type="text" name="address"/><p th:if="${#fields.hasErrors('address')}" th:errors="*{address}">标题长度必须在2-30之间</p><br/>
+    	<input type="submit" value="提交"/><br/>
+    </form>
+  </body>
+</html>
