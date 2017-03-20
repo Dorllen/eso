@@ -6,7 +6,7 @@
  * @date 2017-3-20 下午3:33:36
  * @version V1.0
  */
-package com.zhidian;
+package com.zhidian.configs;
 
 import java.io.IOException;
 import java.nio.file.Files;
