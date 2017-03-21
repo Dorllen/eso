@@ -49,7 +49,7 @@ import com.zhidian.views.UserVO;
  * @date 2017-3-18 下午9:58:21
  * 
  */
-@Controller
+//@Controller
 public class SimpleController {
 	private Logger log = LoggerFactory.getLogger(getClass());
 

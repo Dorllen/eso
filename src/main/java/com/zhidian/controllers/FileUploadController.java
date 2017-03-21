@@ -6,7 +6,7 @@
  * @date 2017-3-20 下午3:33:36
  * @version V1.0
  */
-package com.zhidian.configs;
+package com.zhidian.controllers;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,7 +31,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-@Controller
+//@Controller
 public class FileUploadController {
 	
 	private static final Logger log = LoggerFactory

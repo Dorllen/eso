@@ -7,7 +7,7 @@
 * @date 2017-3-18 下午11:16:33
 * @version V1.0
 */
-package com.zhidian.interceptors;
+package com.zhidian.configs;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  *
  */
 @Configuration
-public class WebLoadingConfigs extends WebMvcConfigurerAdapter {
+public class WebMvcConfigs extends WebMvcConfigurerAdapter {
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 //		registry.addInterceptor(new SimpleInterceptor()).addPathPatterns("/**").addPathPatterns("/simple/**");

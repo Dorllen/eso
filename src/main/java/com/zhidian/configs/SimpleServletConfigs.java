@@ -27,7 +27,7 @@ import com.zhidian.test.SimpleServlet;
  * @date 2017-3-20 上午9:52:00
  * 
  */
-@Component
+//@Component
 public class SimpleServletConfigs implements ServletContextInitializer {
 
 	@Override

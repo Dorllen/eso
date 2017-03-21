@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Implementation-Vendor: Pivotal Software, Inc.
 Implementation-Title: web
 Implementation-Version: 0.0.1-SNAPSHOT
-Implementation-Vendor-Id: com.zhidian
-Build-Jdk: 1.6.0_43
 Built-By: Administrator
-Created-By: Maven Integration for Eclipse
+Implementation-Vendor-Id: com.zhidian
+Build-Jdk: 1.8.0_111
 Implementation-URL: http://projects.spring.io/spring-boot/web/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
 

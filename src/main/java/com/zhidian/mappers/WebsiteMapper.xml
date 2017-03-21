@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhidian.mappers.WebsiteMapper">
+
+
+	<insert id="addWebsite" parameterType="Website" keyColumn="id"
+		useGeneratedKeys="true" keyProperty="id">
+		insert into
+		websites(name,shortAddr,fullAddr,createTime,createMan,descri)
+		values(#{name},#{shortAddr},#{fullAddr},#{createTime},#{createMan},#{descri})
+	</insert>
+
+
+</mapper>
