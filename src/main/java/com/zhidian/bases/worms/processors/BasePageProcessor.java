@@ -11,9 +11,6 @@ package com.zhidian.bases.worms.processors;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.springframework.beans.factory.annotation.Value;
-
-import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Site;
 import us.codecraft.webmagic.processor.PageProcessor;
 
@@ -28,30 +25,22 @@ public abstract class BasePageProcessor implements PageProcessor {
 	public final static String STATIC_NAME_CONTENT = "STATIC_CONTENTS_CODE";
 	public final static String STATIC_NAME_CSS = "STATIC_CSS_CODE";
 
+	private String userAgent = "Mozilla/5.0 (Windows NT 6.1; WOW64; rv/:51.0) Gecko/20100101 Firefox/51.0";
 
-	@Value("${cookies.settings.userAgent}")
-	private String userAgent;
+	private int timeout = 3000;
 
-	@Value("${cookies.settings.timeout}")
-	private int timeout;
+	private String charset = "UTF-8";
 
-	@Value("${cookies.settings.charset}")
-	private String charset;
+	private int sleepTime = 2000;
 
-	@Value("${cookies.settings.sleepTime}")
-	private int sleepTime;
+	private int cycleTime = 0;
 
-	@Value("${cookies.settings.cycleTime}")
-	private int cycleTime;
-
-	@Value("${cookies.settings.useGzip}")
-	private boolean useGzip;
+	private boolean useGzip = false;
 
 	@Override
 	public Site getSite() {
-		return Site.me().setUserAgent(userAgent).setCharset(charset)
-				.setCycleRetryTimes(cycleTime).setSleepTime(sleepTime)
-				.setTimeOut(timeout).setUseGzip(useGzip);
+		return Site.me().setUserAgent(userAgent).setCharset(charset).setCycleRetryTimes(cycleTime)
+				.setSleepTime(sleepTime).setTimeOut(timeout).setUseGzip(useGzip);
 	}
 
 	public boolean isCss(Object url) {

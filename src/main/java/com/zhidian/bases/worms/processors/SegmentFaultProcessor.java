@@ -3,12 +3,14 @@ package com.zhidian.bases.worms.processors;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.zhidian.bases.worms.pipelines.SegmentFaultSearchPipeline;
+import com.zhidian.test.thread.Runa;
+import com.zhidian.views.SearchResultVO;
+
 import us.codecraft.webmagic.Page;
 import us.codecraft.webmagic.Spider;
+import us.codecraft.webmagic.pipeline.Pipeline;
 import us.codecraft.webmagic.selector.Selectable;
-
-import com.zhidian.bases.worms.pipelines.SegmentFaultSearchPipeline;
-import com.zhidian.views.SearchResultVO;
 
 public class SegmentFaultProcessor extends BasePageProcessor {
 
@@ -42,8 +44,18 @@ public class SegmentFaultProcessor extends BasePageProcessor {
 	}
 
 	public static void main(String[] args) {
-		Spider.create(new SegmentFaultProcessor())
-				.addPipeline(new SegmentFaultSearchPipeline())
-				.get("https://segmentfault.com/search?q=python");
+//		Spider.create(new SegmentFaultProcessor())
+//				.addPipeline(new SegmentFaultSearchPipeline())
+//				.get("https://segmentfault.com/search?q=python");
+		SegmentFaultSearchPipeline pipe = new SegmentFaultSearchPipeline();
+		Runa runa = new Runa(pipe);
+		Runa runa2 = new Runa(pipe);
+		Thread t1 = new Thread(runa,"demo1");
+		Thread t2 = new Thread(runa2,"demo2");
+		t1.start();
+		System.out.println("1 ="+pipe.getResults());
+		t2.start();
+		System.out.println("2 ="+pipe.getResults());
+		
 	}
 }

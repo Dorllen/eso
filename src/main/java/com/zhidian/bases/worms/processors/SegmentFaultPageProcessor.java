@@ -15,7 +15,6 @@ import java.util.List;
 import com.zhidian.views.SearchResultVO;
 
 import us.codecraft.webmagic.Page;
-import us.codecraft.webmagic.monitor.SpiderMonitor;
 import us.codecraft.webmagic.selector.Selectable;
 
 /**

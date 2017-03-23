@@ -13,15 +13,16 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import us.codecraft.webmagic.ResultItems;
-import us.codecraft.webmagic.Task;
-import us.codecraft.webmagic.pipeline.Pipeline;
+import org.springframework.stereotype.Component;
 
 import com.zhidian.bases.worms.processors.BasePageProcessor;
 import com.zhidian.mappers.ArticleMapper;
 import com.zhidian.mappers.CssMapper;
 import com.zhidian.views.SearchResultVO;
+
+import us.codecraft.webmagic.ResultItems;
+import us.codecraft.webmagic.Task;
+import us.codecraft.webmagic.pipeline.Pipeline;
 
 /**
  * @ClassName: SegementFaultPipeline
@@ -30,6 +31,7 @@ import com.zhidian.views.SearchResultVO;
  * @date 2017-3-21 上午1:07:15
  * 
  */
+@Component
 public class SegmentFaultSearchPipeline implements Pipeline {
 	private final Logger log = LoggerFactory.getLogger(getClass());
 	
@@ -38,7 +40,7 @@ public class SegmentFaultSearchPipeline implements Pipeline {
 		log.info("SegmentFaultSearchPipeline :1 ->{}", results);
 	}
 
-	private List<SearchResultVO> results;
+	private List<SearchResultVO> results ;
 
 	@Autowired
 	ArticleMapper articleMapper;
@@ -59,6 +61,11 @@ public class SegmentFaultSearchPipeline implements Pipeline {
 			for(SearchResultVO s : results){
 				System.out.println(s);
 			}
+		}
+		if(articleMapper!=null){
+			System.out.println(articleMapper);
+		}else{
+			System.out.println("article mapper is null!!!!");
 		}
 	}
 
