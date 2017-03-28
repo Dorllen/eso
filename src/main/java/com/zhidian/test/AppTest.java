@@ -19,9 +19,9 @@ import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.zhidian.WebApplication;
-import com.zhidian.entities.Article;
-import com.zhidian.mappers.ArticleMapper;
-import com.zhidian.mappers.UserMapper;
+import com.zhidian.mapper.ArticleMapper;
+import com.zhidian.mapper.UserMapper;
+import com.zhidian.model.Article;
 
 /**
  * @ClassName: AppTest

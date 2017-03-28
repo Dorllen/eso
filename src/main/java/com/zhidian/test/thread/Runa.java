@@ -1,6 +1,6 @@
 package com.zhidian.test.thread;
 
-import com.zhidian.bases.worms.processors.SegmentFaultProcessor;
+import com.zhidian.bases.worms.processor.SegmentFaultProcessor;
 
 import us.codecraft.webmagic.Spider;
 import us.codecraft.webmagic.pipeline.Pipeline;

@@ -1,10 +1,10 @@
 package com.zhidian.bases;
 
-import com.zhidian.bases.worms.pipelines.SegmentFaultPagePipeline;
-import com.zhidian.bases.worms.processors.SegmentFaultPageProcessor;
+import com.zhidian.bases.worms.pipeline.SegmentFaultPagePipeline;
+import com.zhidian.bases.worms.processor.SegmentFaultPageProcessor;
 
 public enum EnumWebSiteDefine {
-	github(null,null,null), segementfault("https://segmentfault.com/search?q=",SegmentFaultPageProcessor.class,SegmentFaultPagePipeline.class);
+	github(null,null,null), segmentfault("https://segmentfault.com/search?q=",SegmentFaultPageProcessor.class,SegmentFaultPagePipeline.class);
 
 	private String url;
 	private Class<?> processor;
